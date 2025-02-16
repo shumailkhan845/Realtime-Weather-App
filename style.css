@@ -1,0 +1,184 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(images/background.jpg) no-repeat center center/cover;
+    min-height: 100vh;
+}
+
+/* Weather App Container */
+.container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 14px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Search Box */
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.search-box input {
+    width: 70%;
+    height: 45px;
+    border: none;
+    border-radius: 25px;
+    padding-left: 15px;
+    font-size: 1rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+/* Placeholder Styling */
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Search Button */
+.bx-search {
+    position: absolute;
+    right: 15px;
+    top: 28px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Search Button Hover Effect */
+.bx-search:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+/* Weather Image Container */
+.imageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    animation: slideUp 1s ease-in-out;
+}
+
+.imageContainer img {
+    width: 200px;
+    height: 200px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Temperature & City Name */
+.imageContainer span {
+    display: block;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Weather Conditions Container */
+.conditionContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+/* Humidity & Wind Styling */
+.humidity-container, .wind-container {
+    color: #fff;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Weather Icons */
+.bx-wind {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .container {
+        width: 95%;
+    }
+    
+    .search-box input {
+        width: 70%;
+    }
+
+    .bx-search {
+        width: 40px;
+        height: 40px;
+    }
+
+    .imageContainer img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .imageContainer span {
+        font-size: 1.3rem;
+    }
+    
+    .humidity-container, .wind-container {
+        font-size: 0.9rem;
+    }
+}
